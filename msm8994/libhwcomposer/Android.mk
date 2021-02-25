@@ -9,10 +9,10 @@ LOCAL_MODULE_TAGS             := optional
 LOCAL_C_INCLUDES              := $(common_includes) $(kernel_includes) \
                                  $(TOP)/external/skia/include/core \
                                  $(TOP)/external/skia/include/images
-LOCAL_SHARED_LIBRARIES        := $(common_libs) libEGL liboverlay \
-                                 libhdmi libqdutils libhardware_legacy \
-                                 libdl libmemalloc libqservice libsync \
-                                 libbinder libmedia
+LOCAL_SHARED_LIBRARIES        := $(common_libs) libEGL \
+                                 libhardware_legacy \
+                                 libdl libsync \
+                                 libbinder
 
 ifeq ($(TARGET_USES_QCOM_BSP),true)
 LOCAL_SHARED_LIBRARIES += libskia
