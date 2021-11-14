@@ -20,7 +20,7 @@ include $(CLEAR_VARS)
 
 LOCAL_MODULE_RELATIVE_PATH := hw
 LOCAL_PROPRIETARY_MODULE := true
-LOCAL_HEADER_LIBRARIES := libhardware_headers
+LOCAL_C_INCLUDES += hardware/libhardware/include
 LOCAL_CFAGS := -Wconversion -Wall -Werror
 LOCAL_SHARED_LIBRARIES := liblog
 LOCAL_SRC_FILES := memtrack_msm.c kgsl.c
