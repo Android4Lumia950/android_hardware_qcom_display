@@ -4,11 +4,10 @@ include $(CLEAR_VARS)
 
 LOCAL_MODULE                  := liboverlay
 LOCAL_MODULE_TAGS             := optional
-LOCAL_C_INCLUDES              := $(common_includes) $(kernel_includes)
 LOCAL_SHARED_LIBRARIES        := $(common_libs) libqdutils libmemalloc \
                                  libsync libdl
 LOCAL_CFLAGS                  := $(common_flags) -DLOG_TAG=\"qdoverlay\" -Wno-sign-conversion
-LOCAL_ADDITIONAL_DEPENDENCIES := $(common_deps)
+LOCAL_HEADER_LIBRARIES        := display_headers generated_kernel_headers
 LOCAL_SRC_FILES := \
       overlay.cpp \
       overlayUtils.cpp \
