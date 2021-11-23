@@ -22,8 +22,8 @@ LOCAL_MODULE                  := gralloc.$(TARGET_BOARD_PLATFORM)
 LOCAL_MODULE_RELATIVE_PATH    := hw
 LOCAL_PROPRIETARY_MODULE      := true
 LOCAL_MODULE_TAGS             := optional
-LOCAL_SHARED_LIBRARIES        := $(common_libs)
-LOCAL_SHARED_LIBRARIES        += libGLESv1_CM
+LOCAL_SHARED_LIBRARIES        := $(common_libs) libmemalloc libqdMetaData
+LOCAL_SHARED_LIBRARIES        += libGLESv1_CM libqdutils
 LOCAL_CFLAGS                  := $(common_flags) -DLOG_TAG=\"qdgralloc\" -Wno-sign-conversion
 LOCAL_HEADER_LIBRARIES        := display_headers generated_kernel_headers
 LOCAL_SRC_FILES               := gpu.cpp gralloc.cpp framebuffer.cpp mapper.cpp
