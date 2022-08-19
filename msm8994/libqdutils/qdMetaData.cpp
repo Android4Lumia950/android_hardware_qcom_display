@@ -92,6 +92,9 @@ int setMetaData(private_handle_t *handle, DispParamType paramType,
         case MAP_SECURE_BUFFER:
             data->mapSecureBuffer = *((int32_t *)param);
             break;
+        case SET_VT_TIMESTAMP:
+            data->vtTimeStamp = *((uint64_t *)param);
+            break;
         default:
             ALOGE("Unknown paramType %d", paramType);
             break;

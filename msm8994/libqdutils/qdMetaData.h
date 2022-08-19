@@ -86,6 +86,9 @@ struct MetaData_t {
       * for clients to set, and GPU will to read and know when to map the
       * SECURE_BUFFER(ION) */
     int32_t mapSecureBuffer;
+
+    /* Set by camera to program the VT Timestamp */
+    uint64_t vtTimeStamp;
 };
 
 enum DispParamType {
@@ -100,6 +103,7 @@ enum DispParamType {
     UPDATE_REFRESH_RATE = 0x0100,
     UPDATE_COLOR_SPACE = 0x0200,
     MAP_SECURE_BUFFER = 0x400,
+    SET_VT_TIMESTAMP = 0x1000,
 };
 
 struct private_handle_t;
