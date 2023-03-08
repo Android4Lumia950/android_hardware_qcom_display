@@ -3,6 +3,8 @@ include $(CLEAR_VARS)
 include $(LOCAL_PATH)/../../../common.mk
 
 LOCAL_MODULE                  := libsdmcore
+LOCAL_LICENSE_KINDS           := SPDX-license-identifier-BSD
+LOCAL_LICENSE_CONDITIONS      := notice
 LOCAL_VENDOR_MODULE           := true
 LOCAL_MODULE_TAGS             := optional
 LOCAL_C_INCLUDES              := $(common_includes) $(kernel_includes)
@@ -57,32 +59,3 @@ ifneq ($(TARGET_IS_HEADLESS), true)
 endif
 
 include $(BUILD_SHARED_LIBRARY)
-
-SDM_HEADER_PATH := ../../include
-include $(CLEAR_VARS)
-LOCAL_VENDOR_MODULE           := true
-LOCAL_COPY_HEADERS_TO         := $(common_header_export_path)/sdm/core
-LOCAL_COPY_HEADERS             = $(SDM_HEADER_PATH)/core/buffer_allocator.h \
-                                 $(SDM_HEADER_PATH)/core/buffer_sync_handler.h \
-                                 $(SDM_HEADER_PATH)/core/core_interface.h \
-                                 $(SDM_HEADER_PATH)/core/debug_interface.h \
-                                 $(SDM_HEADER_PATH)/core/display_interface.h \
-                                 $(SDM_HEADER_PATH)/core/dump_interface.h \
-                                 $(SDM_HEADER_PATH)/core/layer_buffer.h \
-                                 $(SDM_HEADER_PATH)/core/layer_stack.h \
-                                 $(SDM_HEADER_PATH)/core/sdm_types.h \
-                                 $(SDM_HEADER_PATH)/core/socket_handler.h
-include $(BUILD_COPY_HEADERS)
-
-include $(CLEAR_VARS)
-LOCAL_VENDOR_MODULE           := true
-LOCAL_COPY_HEADERS_TO         := $(common_header_export_path)/sdm/private
-LOCAL_COPY_HEADERS             = $(SDM_HEADER_PATH)/private/color_interface.h \
-                                 $(SDM_HEADER_PATH)/private/color_params.h \
-                                 $(SDM_HEADER_PATH)/private/extension_interface.h \
-                                 $(SDM_HEADER_PATH)/private/hw_info_types.h \
-                                 $(SDM_HEADER_PATH)/private/partial_update_interface.h \
-                                 $(SDM_HEADER_PATH)/private/resource_interface.h \
-                                 $(SDM_HEADER_PATH)/private/strategy_interface.h \
-                                 $(SDM_HEADER_PATH)/private/dpps_control_interface.h
-include $(BUILD_COPY_HEADERS)
